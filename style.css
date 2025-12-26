@@ -1,0 +1,328 @@
+:root {
+    --primary: #2563eb;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --gray: #64748b;
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+body { background-color: var(--light); color: var(--dark); overflow-x: hidden; }
+
+/* Navbar */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 10%; position: absolute; width: 100%; z-index: 100;
+}
+.logo { font-weight: 800; font-size: 1.5rem; color: white; letter-spacing: 1px; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; }
+.nav-links li a { color: white; text-decoration: none; margin-left: 2rem; font-weight: 600; }
+
+
+/* Editorial Hero Styling */
+
+.hero-editorial {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.8fr;
+    background: #000;
+    color: #fff;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+/* Left Content */
+.hero-left {
+    padding-left: 15%;
+    z-index: 5;
+}
+
+
+
+.serif-name {
+    font-family: 'Playfair Display', serif; /* Use a serif font for that fashion look */
+     font-size: clamp(28px, 6vw, 64px);
+    letter-spacing: -0.04em;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+/* serif-name */
+/* Tablet */
+@media (max-width: 1024px) {
+    .serif-name {
+        font-size: 48px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .serif-name {
+        font-size: 34px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .serif-name {
+        font-size: 28px;
+    }
+}
+
+
+
+.social-links a {
+  margin-right: 16px;
+  font-size: 18px;
+  color: #fff;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+
+.intro-text {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+/* Center Image Container */
+.hero-image-container {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.portrait-img {
+    height: 95%;
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale(100%); /* Ensures the grayscale theme */
+    transition: 0.5s ease;
+}
+
+.portrait-img:hover {
+    filter: grayscale(0%); /* Subtle psychological reveal on hover */
+}
+
+/* Right Vertical Nav */
+.vertical-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 20%;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    height: 60%;
+    justify-content: center;
+    
+}
+
+
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-item span {
+    font-size: 0.7rem;
+    color: #ffffff;
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-item a:hover {
+    letter-spacing: 3px;
+    color: #aaa;
+}
+
+/* Mobile Responsive Fix */
+@media (max-width: 1024px) {
+    .hero-editorial {
+        grid-template-columns: 1fr; /* Stack everything */
+        height: auto;
+        padding-top: 80px;
+    }
+    
+    .hero-left { padding: 2rem; text-align: center; }
+    .social-icons { justify-content: center; }
+    
+    .vertical-nav {
+        border-left: none;
+        padding: 2rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+/* Dynamic Cards */
+.services { padding: 5rem 10%; text-align: center; }
+.section-title { margin-bottom: 3rem; font-size: 2.5rem; position: relative; }
+.card-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 2rem;
+}
+.card {
+    background: white; padding: 2.5rem; border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: var(--transition); cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+    border-color: var(--primary);
+}
+.card-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+/* Contact Form */
+.contact { padding: 5rem 10%; background: #f1f5f9; }
+.form-wrapper { max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 20px; }
+input, textarea {
+    width: 100%; padding: 1rem; margin-bottom: 1rem;
+    border: 1px solid #ddd; border-radius: 8px; outline: none;
+}
+.btn-submit {
+    width: 100%; padding: 1rem; background: var(--primary);
+    color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2rem; }
+    .nav-links { display: none; }
+}
+
+/* Logo Section Styling */
+.logo-section {
+    background: radial-gradient(circle at top left, #1e293b, #0f172a);
+    padding: 6rem 10%;
+    text-align: center;
+}
+
+.light-text { color: #ffffff; }
+.section-subtitle { color: #94a3b8; margin-bottom: 3rem; }
+
+.glass-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* The Glass Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px); /* This creates the frost effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card:hover {
+    transform: translateY(-15px);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: #2563eb;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(37, 99, 235, 0.2);
+    color: #60a5fa;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.logo-icon { font-size: 3.5rem; margin-bottom: 1.5rem; display: block; }
+
+.card-features {
+    list-style: none;
+    margin-top: 1.5rem;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.card-features li {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+}
+
+.card-features li::before {
+    content: "✓";
+    color: #2563eb;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Optimized Mobile Responsive View */
+@media (max-width: 768px) {
+    /* Reduce section padding so content has more room */
+    .logo-section {
+        padding: 4rem 5%;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    /* Stack cards vertically */
+    .glass-grid {
+        grid-template-columns: 1fr; /* Forces single column */
+        gap: 1.5rem;
+    }
+
+    /* Adjust card internal spacing for mobile */
+    .glass-card {
+        padding: 2rem 1.5rem;
+        text-align: left; /* Easier to read on mobile */
+    }
+
+    .logo-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Ensure the glass effect doesn't lag on older phones */
+    .glass-card {
+        backdrop-filter: blur(8px); 
+        -webkit-backdrop-filter: blur(8px);
+    }
+    
+    /* Make the badge smaller on mobile */
+    .card-badge {
+        font-size: 0.65rem;
+        top: 15px;
+        right: 15px;
+    }
+}
